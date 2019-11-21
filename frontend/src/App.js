@@ -1,6 +1,6 @@
 import React from "react";
 //import logo from "./logo.svg";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 import 'antd/dist/antd.css';
 import "./App.css";
 import Navigation from "./components/Navigation/Navigation";
@@ -10,7 +10,7 @@ import CreateUser from "./components/CreateUser/CreateUser";
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <div className="container-fluid">
         <Navigation />
         <Route exact path="/" component={NotesList} />
@@ -18,7 +18,7 @@ function App() {
         <Route path="/edit/:id" component={CreateNote} />
         <Route path="/user" component={CreateUser} />
       </div>
-    </Router>
+    </BrowserRouter>
   );
 }
 
